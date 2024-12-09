@@ -37,11 +37,16 @@
 </div>
 
 <style>
+  :global(html) {
+    min-height: 100%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+    background-attachment: fixed;
+  }
+
   :global(body) {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
     min-height: 100vh;
     -webkit-text-size-adjust: 100%;
     color: #2c3e50;
