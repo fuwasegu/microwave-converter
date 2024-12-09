@@ -3,6 +3,7 @@
   import ResultDisplay from './lib/components/ResultDisplay.svelte';
   import { calculateHeatingTime } from './lib/utils/calculator';
   import type { CalculationResult } from './lib/types';
+  import { inject } from '@vercel/analytics';
 
   let calculatedTime: number | null = null;
 
@@ -10,6 +11,9 @@
     const { originalWattage, originalTime, targetWattage } = event.detail;
     calculatedTime = calculateHeatingTime(originalWattage, originalTime, targetWattage);
   }
+
+  // Vercel Analytics の初期化
+  inject();
 </script>
 
 <div class="app">
