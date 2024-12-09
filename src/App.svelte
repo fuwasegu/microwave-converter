@@ -14,16 +14,18 @@
 
 <div class="app">
   <header>
-    <div class="header-content">
-      <h1>
-        <span class="subtitle">電子レンジの</span>
-        <span class="main-title">温め時間変換器</span>
-      </h1>
+    <div class="container">
+      <div class="card">
+        <h1>
+          <span class="subtitle">電子レンジの</span>
+          <span class="main-title">温め時間変換器</span>
+        </h1>
+      </div>
     </div>
   </header>
 
   <main>
-    <div class="content">
+    <div class="container">
       <MicrowaveCalculator on:calculate={handleCalculate} />
       <ResultDisplay {calculatedTime} />
     </div>
@@ -48,32 +50,22 @@
   }
 
   header {
-    background: white;
     margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: center;
   }
 
-  .header-content {
-    width: 100%;
-    max-width: 400px;
-    padding: 1.25rem 1rem;
-    text-align: center;
-  }
-
-  main {
-    flex: 1;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  .container {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
     padding: 0 1rem;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  main {
+    flex: 1;
   }
 
   .card {
@@ -81,6 +73,7 @@
     border-radius: 16px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
     width: 100%;
+    box-sizing: border-box;
   }
 
   h1 {
@@ -107,7 +100,12 @@
   }
 
   :global(.card) {
+    background: white;
     border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    padding: 1.25rem;
+    box-sizing: border-box;
   }
 
   @media (max-width: 360px) {
@@ -115,16 +113,13 @@
       margin-bottom: 1rem;
     }
 
-    .header-content {
-      padding: 1rem;
-    }
-
-    .content {
+    .container {
       gap: 1rem;
       padding: 0 0.5rem;
     }
 
     :global(.card) {
+      padding: 1rem;
       border-radius: 12px;
     }
 
